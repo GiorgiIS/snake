@@ -1,0 +1,101 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+namespace snake
+{
+
+
+
+    static class snake
+    {   
+        public static void drawsnake(int x,int y)
+        {
+            int X = x;
+            int Y = y;
+            setcords(x, y);
+
+        }
+        public static int[,] getfruit(int x, int y)
+        {
+            Random rand = new Random();
+            int x = rand.Next(x, y);
+            int y = rand.Next(x, y);
+            int[,] cords = new int[0, 1];
+            cords[0, 0] = x;
+            cords[0, 1] = y;
+            return cords;
+        }
+        public static List<int> snakecords =new List<int>();
+        public static int[,] setcords(int x,int y)
+        {
+
+            int ssnakecordsssy= x % 2 == 0?  x / 2 :  (x / 2) + 1;
+            int snakecordsssy = y % 2 == 0 ? y / 2 : (y / 2) + 1;
+            int[,] cords = new int[0, 1];
+            cords[0, 0] = ssnakecordsssy;
+            cords[0, 1] = snakecordsssy;
+            return cords;
+            snakecords.Add(ssnakecordsssy);
+            snakecords.Add(snakecordsssy);
+        }
+        
+       
+        public static void move()
+        {
+
+
+
+        }
+        public static void draw(int width, int height)
+        {
+            
+            for (int i = 0; i < width; i++)
+            {
+                Console.SetCursorPosition(i, 10);
+                Console.Write("_");
+            }
+            for (int i = 0; i < width; i++)
+            {
+                Console.SetCursorPosition(i, 10 + height);
+                Console.Write("_");
+            }
+            for (int i = 0; i < height; i++)
+            {
+                Console.SetCursorPosition(0, i + 10);
+                Console.Write("|");
+            }
+            for (int i = 0; i < height; i++)
+            {
+                Console.SetCursorPosition(width, 10 + i);
+                Console.Write("|");
+            }
+
+
+
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Sheiyvane to ramxela ginda iyo simagleshi da siganshi satamasho tapa jer x mere y");
+            int x, y;
+            string _x, _y;
+            _x = Console.ReadLine();
+            _y = Console.ReadLine();
+            x = int.Parse(_x);
+            y = int.Parse(_y);
+            
+            snake.draw(x, y);
+            bool doordonot=true;
+            while (doordonot ==true)
+            {
+                snake.draw(x, y);
+            }
+        }
+    }
+    
+        
+    }
+// ბრუჰ
