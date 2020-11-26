@@ -1,0 +1,96 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+namespace snake
+{
+
+
+
+    static class snake
+    {
+        public static List<int> snakecords =new List<int>();
+        
+        
+
+        public static int[,] snakecord = new int[1, 0];
+        public static int snake_lenght = 1;
+        public static void start(int move_x,int move_y,int snakelenght)
+        {
+
+            Console.SetCursorPosition(snakecord[0, 0], snakecord[1, 0]);
+            Console.WriteLine("*");
+            if (move_x < 0)
+            {
+
+            }else if (move_x > 0)
+            {
+
+            }else if (move_y > 0)
+            {
+
+            }
+            else if (move_y < 0)
+            {
+
+            }
+
+        }
+
+        public static void draw(int width, int height)
+        {
+            
+            for (int i = 0; i < width; i++)
+            {
+                Console.SetCursorPosition(i, 10);
+                Console.Write("_");
+            }
+            for (int i = 0; i < width; i++)
+            {
+                Console.SetCursorPosition(i, 10 + height);
+                Console.Write("_");
+            }
+            for (int i = 0; i < height; i++)
+            {
+                Console.SetCursorPosition(0, i + 10);
+                Console.Write("|");
+            }
+            for (int i = 0; i < height; i++)
+            {
+                Console.SetCursorPosition(width, 10 + i);
+                Console.Write("|");
+            }
+
+
+
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Sheiyvane to ramxela ginda iyo simagleshi da siganshi satamasho tapa jer x mere y");
+            int x, y;
+            string _x, _y;
+            _x = Console.ReadLine();
+            _y = Console.ReadLine();
+            x = int.Parse(_x);
+            y = int.Parse(_y);
+            
+            snake.draw(x, y);
+           
+            int win= 1;
+            string a = "a" ;
+            a = Console.ReadKey().Key.ToString();
+            Console.WriteLine(a);
+            while (win == 1)
+            {
+                
+            }
+            
+        }
+    }
+
+        
+    }
+
